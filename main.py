@@ -1,8 +1,15 @@
 import discord
+import requests
+import json
+
 from discord.ext.commands import Bot
 from discord.ext import commands
 from pokemontcgsdk import Card
-# import os
+from pokemontcgsdk import Set
+from pokemontcgsdk import Type
+from pokemontcgsdk import Supertype
+from pokemontcgsdk import Subtype
+from pokemontcgsdk import Rarity
 
 intents = discord.Intents.default()
 intents.messages = True
@@ -16,13 +23,8 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    if message.content.startswith("!pokemon"):
+        card = Card.find(message.content[9:])
+        await message.channel.send(card.images.large)
 
-    if message.author == client.user:
-        return
-        
-    if message.content == "ping":
-        print("pong")
-        card = Card.find('xy1-1')
-        await message.channel.send(card.name)
-
-client.run('MTA0MjE2OTAzMjQ4MjIzNDM4OA.Gzx9cU.mMhL6oyS3JQY7-vr6HV6uJSJKorPXsLn5lwTBU')
+client.run('MTA0MjE2OTAzMjQ4MjIzNDM4OA.GEt-rO.uRti9mH9aez0kEg75FHJgEGXXpmfqAcWdjJO_4')
