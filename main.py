@@ -1,6 +1,7 @@
 import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
+from pokemontcgsdk import Card
 # import os
 
 intents = discord.Intents.default()
@@ -21,38 +22,7 @@ async def on_message(message):
         
     if message.content == "ping":
         print("pong")
-        await message.channel.send('pong')
-    # await Bot.process_commands(message)
+        card = Card.find('xy1-1')
+        await message.channel.send(card.name)
 
-client.run('MTA0MjE2OTAzMjQ4MjIzNDM4OA.G2mD0i.xoTKaR5_EfbwNlTtbgbjeb_5dVlm1altycl3f4')
-
-# import discord
-# import os
-# from discord.ext import commands
-# from discord.ext.commands import Bot
-
-# case_insensitive=True
-
-# client = discord.Client(intents=discord.Intents.default())
-# bot = commands.Bot(
-#   command_prefix="!",
-#   intents=discord.Intents(members=True, messages=True, guilds=True)
-# )
-
-# @client.event
-# async def on_ready():
-#     print('logged in as {0.user}!'.format(client))
-
-# @client.event
-# async def on_message(message):
-#     if message.author == client.user:
-#         return
-
-# bot = Bot("!")
-
-# @bot.command(name="ping", description= "Find out!")
-# async def ping(ctx):
-#   await ctx.send("Pong!")
-# client.run(os.getenv('TOKEN'))
-
-
+client.run('MTA0MjE2OTAzMjQ4MjIzNDM4OA.Gzx9cU.mMhL6oyS3JQY7-vr6HV6uJSJKorPXsLn5lwTBU')
