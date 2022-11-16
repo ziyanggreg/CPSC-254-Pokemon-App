@@ -24,7 +24,7 @@ async def on_message(message):
         await message.channel.send('pong')
     # await Bot.process_commands(message)
 
-client.run('MTA0MjE2OTAzMjQ4MjIzNDM4OA.G2mD0i.xoTKaR5_EfbwNlTtbgbjeb_5dVlm1altycl3f4')
+client.run('MTA0MjE2OTAzMjQ4MjIzNDM4OA.G1VQ7h.pZvyA3heVNQLetIC-gYriGRhIkgB7F8VLfvEBE')
 
 # import discord
 # import os
